@@ -24,26 +24,44 @@
         render();
     };
 
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
+
+    const bindEvents = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");
+
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(taskIndex);
+            });
+        });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(taskIndex);
+            });
+        });
+    };
+
     const render = () => {
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-                <li>
-                    <button class="js-remove">usuń</button>
+                <li class="list__item${task.done ? " list__item--done" : ""}">
+                    <button class="js-done">zrobione?</button>
                     ${task.content}
+                    <button class="js-remove">usuń</button>
                 </li>
                 `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
-        const removeButtons = document.querySelectorAll(".js-remove");
 
-        removeButtons.forEach((removeButton, index) => {
-            removeButton.addEventListener("click", () => {
-                removeTask(index);
-            });
-        });
-
+        bindEvents();
     };
 
     const onFormSubmit = (event) => {

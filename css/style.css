@@ -5,3 +5,22 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
+.list__item--done {
+    text-decoration: line-through;
+}
+
+.addTaskButton {
+    padding: 5px;
+    background-color: teal;
+    color: white;
+    border-style: hidden;
+}
+
+.body {
+    text-align: center;
+}
+
+.tasks {
+    list-style: none;
+}
