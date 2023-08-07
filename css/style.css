@@ -11,16 +11,50 @@ html {
 }
 
 .addTaskButton {
-    padding: 5px;
+    padding: 7px;
     background-color: teal;
     color: white;
     border-style: hidden;
 }
 
 .body {
-    text-align: center;
+    background-color: rgb(231, 231, 231);
 }
 
 .tasks {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.newTaskInput {
+    padding: 5px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    border: 1px solid gray;
+}
+
+.form {
+    margin: 30px;
+    padding: 10px;
+}
+
+.listContainer {
+    margin: 30px;
+    border: 1px solid gray;
+
+}
+
+.list__header {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.header {
+    margin: 30px;
 }
