@@ -1,0 +1,26 @@
+.list__item {
+    margin: 5px;
+}
+
+.list__item--done {
+    text-decoration: line-through;
+}
+
+.listContainer {
+    background-color: whitesmoke;
+    margin: 30px;
+    border: 1px solid gray;
+
+}
+
+.list__header {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}

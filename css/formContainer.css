@@ -1,0 +1,30 @@
+.formContainer {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+.formContainer__header {
+    padding-left: 20px;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 10px;
+}
+
+.form {
+    margin: 10px;
+    padding: 10px;
+}
+
+.newTaskInput {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.addTaskButton {
+    padding: 7px;
+    background-color: teal;
+    color: white;
+    border-style: hidden;
+}
