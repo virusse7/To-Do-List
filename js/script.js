@@ -1,15 +1,7 @@
 {
-    const tasks = [
-        {
-            content: "zrobić pranie",
-            done: true,
+    const tasks = [];
 
-        },
-        {
-            content: "posprzątać",
-            done: false,
-        },
-    ];
+    const form = document.querySelector(".js-form");
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -56,7 +48,7 @@
                     <p class="list__text">${task.content}</p>
                     <button class="button js-remove"><img width="15" height="15" src="images/trash.png"></button>
                 </li>
-                `;
+            `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -67,18 +59,22 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
+        addTaskButton = document.querySelector(".js-button");
 
         if (newTaskContent === "") {
+            newTaskElement.focus();
             return;
+        } else {
+            addNewTask(newTaskContent);
+            newTaskElement.focus();
+            form.reset();
         };
-        addNewTask(newTaskContent);
     };
 
     const init = () => {
         render();
-
-        const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
     };

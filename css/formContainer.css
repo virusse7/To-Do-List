@@ -31,3 +31,28 @@
     color: white;
     border-style: hidden;
 }
+
+@media (max-width: 767px) {
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-basis: 100%;
+    }
+
+    .newTaskInput {
+        margin: 5px;
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .addTaskButton {
+        margin: 5px;
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
