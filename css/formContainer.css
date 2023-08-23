@@ -26,9 +26,19 @@
 }
 
 .form__addTaskButton {
-    background-color: teal;
+    background-color: hsl(180, 100%, 25%);
     color: white;
     border-style: hidden;
+    transition: 1s;
+}
+.form__addTaskButton:hover {
+    transition: 1s;
+    background-color: hsl(180, 100%, 32%);
+    transform: scale(1.1);
+}
+.form__addTaskButton:active {
+    transition: 1s;
+    background-color: hsl(180, 100%, 35%);
 }
 
 @media (max-width: 767px) {
