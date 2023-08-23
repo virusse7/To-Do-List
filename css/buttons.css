@@ -8,8 +8,20 @@
 .list__button--done {
     background-color: hsl(120, 100%, 35%);
     border-style: none;
+    transition: 1s;
 }
+.list__button--done:hover {
+    transition: 1s;
+    background-color: hsl(120, 100%, 40%);
+}
+
 .list__button--remove {
     background-color: hsl(0, 100%, 45%);
     border-style: none;
+    transition: 1s;
+}
+
+.list__button--remove:hover {
+    transition: 1s;
+    background-color: hsl(0, 100%, 55%);
 }
