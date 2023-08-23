@@ -1,4 +1,15 @@
-.button {
+.list__button {
+    height: 35px;
+    width: 35px;
     margin: 5px;
     padding: 5px;
+}
+
+.list__button--done {
+    background-color: hsl(120, 100%, 35%);
+    border-style: none;
+}
+.list__button--remove {
+    background-color: hsl(0, 100%, 45%);
+    border-style: none;
 }
