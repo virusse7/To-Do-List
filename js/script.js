@@ -1,23 +1,34 @@
 {
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false
 
     const form = document.querySelector(".js-form");
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
 
         render();
     };
 
+
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = tasks.map((task, index) => {
+            if (index === taskIndex) {
+                return { ...task, done: !task.done };
+            };
+            return task;
+        });
         render();
     };
 
@@ -39,7 +50,7 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
@@ -50,8 +61,11 @@
                 </li>
             `;
         };
-
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    }
+
+    const render = () => {
+        renderTasks();
 
         bindEvents();
     };
