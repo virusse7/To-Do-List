@@ -16,13 +16,19 @@
     background-color: whitesmoke;
     margin: 30px;
     border: 1px solid gray;
-
 }
 
-.list__header {
-    padding-left: 20px;
-    padding-bottom: 20px;
+.list__headerElement {
     border-bottom: 1px solid gainsboro;
+    margin: 5px 0 2px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+
+.list__header {
+    padding: 10px 0px 0px 20px;
+    margin: 0px;
 }
 
 .list__tasks {
@@ -37,4 +43,9 @@
     padding: 5px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.list__renderButtons {
+    display: grid;
+    grid-template-columns: 49% 49%;
 }

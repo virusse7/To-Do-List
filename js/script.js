@@ -1,6 +1,6 @@
 {
     let tasks = [];
-    let hideDoneTasks = false
+    let hideDoneTasks = false;
 
     const form = document.querySelector(".js-form");
 
@@ -12,8 +12,6 @@
 
         render();
     };
-
-
     const removeTask = (taskIndex) => {
         tasks = [
             ...tasks.slice(0, taskIndex),
@@ -21,7 +19,6 @@
         ];
         render();
     };
-
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
             if (index === taskIndex) {
@@ -64,8 +61,21 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     }
 
+    const renderButtons = () => {
+        let htmlButton = "";
+
+        for (const task of tasks) {
+            htmlButton += `
+                <button class="renderButtons js-hideDone">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone zadania</button>
+                <button class="renderButtons js-allDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Oznacz zadania jako ukończone</button>
+             `;
+        };
+        document.querySelector(".js-taskButtons").innerHTML = htmlButton;
+    };
+
     const render = () => {
         renderTasks();
+        renderButtons();
 
         bindEvents();
     };

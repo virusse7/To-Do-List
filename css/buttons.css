@@ -25,3 +25,16 @@
     transition: 1s;
     background-color: hsl(0, 100%, 55%);
 }
+
+.renderButtons {
+    font-size: 16px;
+    padding: 5px;
+    margin: 2px;
+    color: teal;
+    border-style: none;
+    background-color: whitesmoke;
+}
+.renderButtons:hover {
+    transition: 1s;
+    color: hsl(180, 100%, 35%);
+}
