@@ -2,8 +2,6 @@
     let tasks = [];
     let hideDoneTasks = false;
 
-    const form = document.querySelector(".js-form");
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
@@ -62,15 +60,15 @@
     }
 
     const renderButtons = () => {
-        let htmlButton = "";
+        let htmlButtons = "";
 
         for (const task of tasks) {
-            htmlButton += `
+            htmlButtons += `
                 <button class="renderButtons js-hideDone">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone zadania</button>
                 <button class="renderButtons js-allDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Oznacz zadania jako ukończone</button>
              `;
         };
-        document.querySelector(".js-taskButtons").innerHTML = htmlButton;
+        document.querySelector(".js-taskButtons").innerHTML = htmlButtons;
     };
 
     const render = () => {
@@ -87,19 +85,16 @@
         const newTaskContent = newTaskElement.value.trim();
         addTaskButton = document.querySelector(".js-button");
 
-        if (newTaskContent === "") {
-            newTaskElement.focus();
-            return;
-        } else {
+        if (newTaskContent !== "") {
             addNewTask(newTaskContent);
-            newTaskElement.focus();
-            form.reset();
-        };
+            newTaskElement.value = "";
+        }
+        newTaskElement.focus();
     };
 
     const init = () => {
         render();
-
+        const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
     };
 
