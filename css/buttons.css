@@ -38,3 +38,7 @@
     transition: 1s;
     color: hsl(180, 100%, 35%);
 }
+
+.renderButtons:disabled {
+    color: hsl(0, 0%, 40%);
+}

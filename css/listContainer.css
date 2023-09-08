@@ -49,3 +49,7 @@
     display: grid;
     grid-template-columns: 49% 49%;
 }
+
+.list__button--hidden {
+    display: none;
+}
