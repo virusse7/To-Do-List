@@ -42,3 +42,5 @@
 .renderButtons:disabled {
     color: hsl(0, 0%, 40%);
 }
+
+@media (max-width:767px)

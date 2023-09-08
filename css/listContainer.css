@@ -53,3 +53,18 @@
 .list__button--hidden {
     display: none;
 }
+
+@media (max-width:767px) {
+    .list__renderButtons {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+    }
+    .list__headerElement {
+        display: flex;
+        flex-direction: column;
+    }
+    .list__header {
+        text-align: center;
+    }
+}
