@@ -10,3 +10,5 @@ Simple project of list where you can add some task, delete them or change to don
 - CSS
 - JavaScript
 - BEM
+- Immutability
+- MediaQueries

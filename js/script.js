@@ -120,6 +120,7 @@
     };
 
     const init = () => {
+        console.log("Hello! \nVisit my github profile: https://github.com/virusse7/To-Do-List")
         render();
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
