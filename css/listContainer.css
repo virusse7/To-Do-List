@@ -54,6 +54,48 @@
     display: none;
 }
 
+.list__button {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    padding: 5px;
+    transition: 1s;
+}
+
+.list__button--done {
+    background-color: hsl(120, 100%, 35%);
+    border-style: none;
+}
+.list__button--done:hover {
+    background-color: hsl(120, 100%, 40%);
+}
+
+.list__button--remove {
+    background-color: hsl(0, 100%, 45%);
+    border-style: none;
+}
+
+.list__button--remove:hover {
+    background-color: hsl(0, 100%, 55%);
+}
+
+.renderButtons {
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px;
+    color: teal;
+    border-style: none;
+    background-color: whitesmoke;
+    transition: 1s;
+}
+.renderButtons:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.renderButtons:disabled {
+    color: hsl(0, 0%, 40%);
+}
+
 @media (max-width:767px) {
     .list__renderButtons {
         display: grid;
@@ -66,5 +108,9 @@
     }
     .list__header {
         text-align: center;
+        padding: 10px 0px;
+    }
+    .renderButtons {
+        margin: 10px;
     }
 }

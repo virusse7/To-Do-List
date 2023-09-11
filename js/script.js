@@ -10,13 +10,14 @@
 
         render();
     };
+
     const removeTask = (taskIndex) => {
         tasks = [
-            ...tasks.slice(0, taskIndex),
-            ...tasks.slice(taskIndex + 1),
+            ...tasks.filter((task, i) => i != taskIndex)
         ];
         render();
     };
+
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
             if (index === taskIndex) {
@@ -26,8 +27,6 @@
         });
         render();
     };
-
-
 
     const renderTasks = () => {
         let htmlString = "";
@@ -41,15 +40,19 @@
             `;
         };
         document.querySelector(".js-tasks").innerHTML = htmlString;
-    }
+    };
 
     const renderButtons = () => {
         let htmlButtons = "";
 
         for (const task of tasks) {
             htmlButtons = `
-                <button class="renderButtons js-hideDone">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone zadania</button>
-                <button class="renderButtons js-allDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Oznacz zadania jako ukończone</button>
+                <button class="renderButtons js-hideDone">
+                    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+                </button>
+                <button class="renderButtons js-allDone" ${tasks.every(({ done }) => done) ? " disabled" : ""}>
+                    Ukończ wszystkie
+                </button>
              `;
         };
         document.querySelector(".js-taskButtons").innerHTML = htmlButtons;
@@ -61,10 +64,12 @@
         );
         render();
     };
+
     const hideTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
-    }
+    };
+
     const bindButtonsEvents = () => {
         const toggleHideButton = document.querySelectorAll(".js-hideDone");
 
@@ -120,7 +125,6 @@
     };
 
     const init = () => {
-        console.log("Hello! \nVisit my github profile: https://github.com/virusse7/To-Do-List")
         render();
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);

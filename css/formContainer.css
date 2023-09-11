@@ -31,12 +31,10 @@
     transition: 1s;
 }
 .form__addTaskButton:hover {
-    transition: 1s;
     background-color: hsl(180, 100%, 32%);
     transform: scale(1.05);
 }
 .form__addTaskButton:active {
-    transition: 1s;
     background-color: hsl(180, 100%, 35%);
 }
 
