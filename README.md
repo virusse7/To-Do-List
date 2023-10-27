@@ -1,6 +1,8 @@
 # To Do List
+![taskList](./images/presentImage.png)
 ## Demo
 https://virusse7.github.io/To-Do-List/
+
 
 ## Description
 Simple project of list where you can add some task, delete them or change to done.
